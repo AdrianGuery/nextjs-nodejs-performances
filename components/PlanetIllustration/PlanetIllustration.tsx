@@ -2,13 +2,13 @@ import React from "react";
 
 import css from "./PlanetIllustration.module.scss";
 
-const PlanetIllustration = () => {
-  const randomPlanet = Math.floor(Math.random() * 380);
+const PlanetIllustration = ({ randomPlanet }: { randomPlanet?: number }) => {
+  const rotate = randomPlanet ?? Math.floor(Math.random() * 380);
   return (
     <div className={css.root}>
       <div
         className={css.planet}
-        style={{ filter: `hue-rotate(${randomPlanet}deg)` }}
+        style={{ filter: `hue-rotate(${rotate}deg)` }}
       >
         <div className={css.wrap}>
           <div className={css.background} />
